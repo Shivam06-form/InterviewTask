@@ -5,6 +5,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   SafeAreaView,
+  ScrollView,
   View,
 } from 'react-native';
 import {Styles} from '../../../Styles';
@@ -63,10 +64,12 @@ const RegistrationPage = () => {
           resizeMode="cover"
         />
       )}
-      <View>
-        {state === 'Signin' && <SignIn setState={setState} />}
-        {state === 'Signup' && <Signup setState={setState} />}
-      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View>
+          {state === 'Signin' && <SignIn setState={setState} />}
+          {state === 'Signup' && <Signup setState={setState} />}
+        </View>
+      </ScrollView>
     </KeyboardAvoidingView>
   );
 };
